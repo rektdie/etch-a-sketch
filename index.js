@@ -22,6 +22,7 @@ function createCanvas(cHeight, cWidth){
             square.style.height = `${sHeight}px`;
             square.style.width = `${sWidth}px`;
             square.classList.add("square");
+            if (grid) square.style.outline = "1px solid black";
     
             row.appendChild(square);
         }
@@ -111,7 +112,7 @@ gridBox.addEventListener("change", () => {
     const squares = document.querySelectorAll(".square");
 
     if (!grid) {
-        squares.forEach(square => square.style.outline = "0.5px solid black");
+        squares.forEach(square => square.style.outline = "1px solid black");
         grid = true;
     } else {
         squares.forEach(square => square.style.outline = "none");
