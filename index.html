@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+
     <script src="index.js" defer></script>
     <title>Etch-A-Sketch</title>
 </head>
@@ -14,10 +18,18 @@
 
     </div>
     <div class="buttons">
-        <button>Item1</button>
-        <button>Item2</button>
-        <button>item3</button>
-        <button>Item4</button>
+        <button id="colorMode">Color</button>
+        <button id="rainbowMode">Rainbow</button>
+        <button id="erase">Erase</button>
+        <button id="clear">Clear</button>
+        <input type="color" name="colorPicker" id="colorPicker">
+        <label for="grid">Grid:</label>
+        <input type="checkbox" name="grid" id="grid">
+    </div>
+
+    <div class="size">
+        <input type="range" min="1" max= "100" step="1" value="16" id="slider">
+        <div class="label">0x0</div>
     </div>
 </body>
 </html>
