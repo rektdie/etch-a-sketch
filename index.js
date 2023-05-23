@@ -22,7 +22,8 @@ function createCanvas(cHeight, cWidth){
             square.style.height = `${sHeight}px`;
             square.style.width = `${sWidth}px`;
             square.classList.add("square");
-            if (grid) square.style.outline = "1px solid black";
+            if (grid) square.style.border = "1px solid black";
+            square.style.boxSizing = "border-box";
     
             row.appendChild(square);
         }
@@ -35,7 +36,8 @@ function createCanvas(cHeight, cWidth){
     let isMouseDown = false;
 
     squares.forEach(square => {
-        square.addEventListener("mousedown", () => {
+        square.addEventListener("mousedown", (e) => {
+            e.preventDefault();
             isMouseDown = true; 
             Paint(square);           
         });
@@ -112,10 +114,10 @@ gridBox.addEventListener("change", () => {
     const squares = document.querySelectorAll(".square");
 
     if (!grid) {
-        squares.forEach(square => square.style.outline = "1px solid black");
+        squares.forEach(square => square.style.border = "1px solid black");
         grid = true;
     } else {
-        squares.forEach(square => square.style.outline = "none");
+        squares.forEach(square => square.style.border = "none");
         grid = false;
     }
     
